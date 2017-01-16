@@ -13,25 +13,34 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="207" height="161"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先打团，别拦着我毕业" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tve-TO-oex">
-                        <rect key="frame" x="10" y="142" width="110" height="13.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nnY-Pp-Jcz">
-                        <rect key="frame" x="5" y="118" width="69" height="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="先打团，别拦着我" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3B6-65-69K">
+                        <rect key="frame" x="10" y="135" width="88" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="69" id="gTA-j6-Cat"/>
+                            <constraint firstAttribute="height" constant="21" id="OLy-WX-0NY"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="斗鱼、小可" image="home_live_player_phone"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpl-zQ-g3V">
-                        <rect key="frame" x="160" y="5" width="42" height="14"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.13739224137931033" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="TrM-Sj-UuG">
+                        <rect key="frame" x="0.0" y="0.0" width="207" height="130"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11E-Hh-m1c">
+                        <rect key="frame" x="154" y="5" width="43" height="20"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="b83-Km-NQ5"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="4.3万" image="home_live_player_phone"/>
+                        <state key="normal" title="1231231">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="3"/>
@@ -39,36 +48,42 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="gPw-9L-Gpa">
-                        <rect key="frame" x="0.0" y="0.0" width="207" height="137.5"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PpX-zd-gik">
+                        <rect key="frame" x="10" y="104" width="43" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="S1v-l7-FvR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="2121321">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="gPw-9L-Gpa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9yA-5Y-Tay"/>
-                <constraint firstItem="jpl-zQ-g3V" firstAttribute="top" secondItem="gPw-9L-Gpa" secondAttribute="top" constant="5" id="D3d-ju-EhX"/>
-                <constraint firstItem="nnY-Pp-Jcz" firstAttribute="bottom" secondItem="gPw-9L-Gpa" secondAttribute="bottom" constant="-5" id="DOB-gn-CVU"/>
-                <constraint firstAttribute="trailing" secondItem="gPw-9L-Gpa" secondAttribute="trailing" id="Dqe-2f-6J4"/>
-                <constraint firstItem="gPw-9L-Gpa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZaY-Au-29p"/>
-                <constraint firstItem="Tve-TO-oex" firstAttribute="top" secondItem="gPw-9L-Gpa" secondAttribute="bottom" constant="5" id="eMC-7A-pNd"/>
-                <constraint firstItem="Tve-TO-oex" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="hMs-nr-M24"/>
-                <constraint firstItem="nnY-Pp-Jcz" firstAttribute="leading" secondItem="gPw-9L-Gpa" secondAttribute="leading" constant="5" id="oFm-ve-Mev"/>
-                <constraint firstAttribute="bottom" secondItem="Tve-TO-oex" secondAttribute="bottom" constant="5" id="tCL-jP-0AX"/>
-                <constraint firstItem="jpl-zQ-g3V" firstAttribute="trailing" secondItem="gPw-9L-Gpa" secondAttribute="trailing" constant="-5" id="tX4-zd-64t"/>
+                <constraint firstItem="TrM-Sj-UuG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0db-FX-BDh"/>
+                <constraint firstItem="TrM-Sj-UuG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7rg-Nd-kC7"/>
+                <constraint firstAttribute="trailing" secondItem="TrM-Sj-UuG" secondAttribute="trailing" id="Dm8-Wc-ekr"/>
+                <constraint firstItem="3B6-65-69K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="FKS-Sq-dNE"/>
+                <constraint firstItem="11E-Hh-m1c" firstAttribute="trailing" secondItem="TrM-Sj-UuG" secondAttribute="trailing" constant="-10" id="LI3-xJ-tnj"/>
+                <constraint firstAttribute="bottom" secondItem="3B6-65-69K" secondAttribute="bottom" constant="5" id="Wti-IG-5uH"/>
+                <constraint firstItem="3B6-65-69K" firstAttribute="top" secondItem="TrM-Sj-UuG" secondAttribute="bottom" constant="5" id="eGL-GF-KlZ"/>
+                <constraint firstItem="PpX-zd-gik" firstAttribute="bottom" secondItem="TrM-Sj-UuG" secondAttribute="bottom" constant="-5" id="mMr-SJ-esO"/>
+                <constraint firstItem="11E-Hh-m1c" firstAttribute="top" secondItem="TrM-Sj-UuG" secondAttribute="top" constant="5" id="qSk-QQ-ZPi"/>
+                <constraint firstItem="PpX-zd-gik" firstAttribute="leading" secondItem="TrM-Sj-UuG" secondAttribute="leading" constant="10" id="tRR-xi-ghi"/>
             </constraints>
             <size key="customSize" width="207" height="161"/>
-            <point key="canvasLocation" x="207.5" y="314.5"/>
+            <connections>
+                <outlet property="icnImageView" destination="TrM-Sj-UuG" id="18v-cP-aa1"/>
+                <outlet property="nickNameBtn" destination="PpX-zd-gik" id="o2y-RE-LAP"/>
+                <outlet property="onlineBtn" destination="11E-Hh-m1c" id="4fw-Le-jnQ"/>
+                <outlet property="roomNameLabel" destination="3B6-65-69K" id="ULF-ZR-Sdi"/>
+            </connections>
+            <point key="canvasLocation" x="525.5" y="266.5"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="Img_default" width="172" height="103"/>
-        <image name="home_live_player_phone" width="14" height="14"/>
     </resources>
 </document>
