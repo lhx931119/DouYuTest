@@ -31,4 +31,5 @@ let kHotCateHost = "getHotCate"
 //bigDataRoom
 let kbigDataRoomHost = "getbigDataRoom"
 
-
+//cycleView
+let kCycleViewHost = "slide/6"

@@ -22,6 +22,7 @@ class RecommendViewModel{
 
 extension RecommendViewModel{
 
+    //请求推荐数据
     func requestData(finishCallBack:()->()){
         //定义参数
         let parpams = ["limit" : "4", "offset" : "0", "time": NSDate.getCurrentTime()]
@@ -48,10 +49,7 @@ extension RecommendViewModel{
             }
             //离开组
             dispatch_group_leave(dGroup)
-            print("请求到0数据")
-
         }
-        
         
         //请求第二部分颜值数据
         // 进入组
@@ -72,9 +70,6 @@ extension RecommendViewModel{
             }
             //离开组
             dispatch_group_leave(dGroup)
-            print("请求到1数据")
-
-            
         }
 
         //请求2-12部分游戏数据
@@ -95,7 +90,6 @@ extension RecommendViewModel{
             }
             //离开组
             dispatch_group_leave(dGroup)
-            print("请求到2-12数据")
         }
         
         //所有的数据都请求到后排序
@@ -104,5 +98,17 @@ extension RecommendViewModel{
             self.anchorGroups.insert(self.bigDataGroup, atIndex: 0)
             finishCallBack()
         }
+    }
+    
+    // 请求无限轮播数据
+    func requestCycleData(finishCallBack:()->()){
+        NetWorkTools.requestForData(.GET, urlString: kDouYuHost + kCycleViewHost, parpams: ["version":"2.300"]) { (result) in
+            print(result)
+            
+            finishCallBack() 
+        }
+        
+        
+        
     }
 }

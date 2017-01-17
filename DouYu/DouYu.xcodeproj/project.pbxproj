@@ -31,6 +31,8 @@
 		450C0A711E291973003C4D81 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0A701E291973003C4D81 /* PageContentView.swift */; };
 		450C0A731E2921C2003C4D81 /* UIColor-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450C0A721E2921C2003C4D81 /* UIColor-Extention.swift */; };
 		4536B12E1E2CF0CE003A0B82 /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536B12D1E2CF0CE003A0B82 /* CollectionBaseCell.swift */; };
+		4536B1301E2DE482003A0B82 /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536B12F1E2DE482003A0B82 /* RecommendCycleView.swift */; };
+		4536B1341E2DE4AE003A0B82 /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4536B1331E2DE4AE003A0B82 /* RecommendCycleView.xib */; };
 		45D1487C1E2B8A6100FF3021 /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1487B1E2B8A6100FF3021 /* NetWorkTools.swift */; };
 		45D1487F1E2B8F8F00FF3021 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D1487E1E2B8F8F00FF3021 /* RecommendViewModel.swift */; };
 		45D148831E2B925900FF3021 /* NSDate-Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D148821E2B925900FF3021 /* NSDate-Extention.swift */; };
@@ -67,6 +69,8 @@
 		450C0A701E291973003C4D81 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		450C0A721E2921C2003C4D81 /* UIColor-Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extention.swift"; sourceTree = "<group>"; };
 		4536B12D1E2CF0CE003A0B82 /* CollectionBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		4536B12F1E2DE482003A0B82 /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		4536B1331E2DE4AE003A0B82 /* RecommendCycleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
 		45D1487B1E2B8A6100FF3021 /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		45D1487E1E2B8F8F00FF3021 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		45D148821E2B925900FF3021 /* NSDate-Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extention.swift"; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 			children = (
 				45010CE21E2B5288009840E3 /* CollectionHeaderView.swift */,
 				45010CE31E2B5288009840E3 /* CollectionHeaderView.xib */,
+				4536B12F1E2DE482003A0B82 /* RecommendCycleView.swift */,
+				4536B1331E2DE4AE003A0B82 /* RecommendCycleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 				450C0A4D1E28BCFD003C4D81 /* Live.storyboard in Resources */,
 				45010CE51E2B5288009840E3 /* CollectionHeaderView.xib in Resources */,
 				450C0A531E28BD47003C4D81 /* Discover.storyboard in Resources */,
+				4536B1341E2DE4AE003A0B82 /* RecommendCycleView.xib in Resources */,
 				45010CED1E2B6184009840E3 /* CollectionPrettyCell.xib in Resources */,
 				450C0A561E28BD5D003C4D81 /* Me.storyboard in Resources */,
 				450C0A4A1E28BCE8003C4D81 /* Home.storyboard in Resources */,
@@ -418,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4536B1301E2DE482003A0B82 /* RecommendCycleView.swift in Sources */,
 				450C0A2A1E2864C9003C4D81 /* AppDelegate.swift in Sources */,
 				45010CE41E2B5288009840E3 /* CollectionHeaderView.swift in Sources */,
 				450C0A691E28D3D7003C4D81 /* UIBarItem-Extention.swift in Sources */,
