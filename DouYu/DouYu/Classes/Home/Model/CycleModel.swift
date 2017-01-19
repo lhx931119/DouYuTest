@@ -28,11 +28,9 @@ class CycleModel: NSObject {
     var anchor: AnchorModel?
 
     //自定义构造函数
-    
     init(dic: [String: NSObject]) {
         super.init()
         setValuesForKeysWithDictionary(dic)
     }
-    
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {}
 }

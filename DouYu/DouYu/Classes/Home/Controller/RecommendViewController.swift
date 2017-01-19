@@ -14,7 +14,7 @@ private let kItemNormalH: CGFloat = kItemW * 3 / 4
 private let kItemPrettyH: CGFloat = kItemW * 4 / 3
 private let kHeadViewH: CGFloat = 50
 private let kCycleViewH = kScreenW * 3 / 8
-
+private let kGameViewH : CGFloat = 90
 private let kNormalCellID = "kNormalCellID"
 private let kPrettylCellID = "kPrettylCellID"
 
@@ -25,9 +25,14 @@ class RecommendViewController: UIViewController {
     
     //懒加载属性
     
+    private lazy var gameView: RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
+    }()
     private lazy var cycleView: RecommendCycleView = {
         let cycleView = RecommendCycleView.recommendCycleView()
-        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenW, height: kCycleViewH)
         return cycleView
     }()
     
@@ -38,6 +43,7 @@ class RecommendViewController: UIViewController {
         layout.itemSize = CGSize(width: kItemW, height: kItemNormalH)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = kItemMagin
+        ///设置区边距
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.headerReferenceSize = CGSize(width: kScreenW, height: kHeadViewH)
         
@@ -47,9 +53,10 @@ class RecommendViewController: UIViewController {
         collectionView.backgroundColor = UIColor.whiteColor()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        ///全部显示
         collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-
         collectionView.registerNib(UINib(nibName: "CollectionNormalCell", bundle: nil)
             , forCellWithReuseIdentifier:kNormalCellID)
         
@@ -60,6 +67,7 @@ class RecommendViewController: UIViewController {
         collectionView.registerNib(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeadViewID)
             return collectionView
     }()
+    
     //系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +78,6 @@ class RecommendViewController: UIViewController {
         
         //请求数据
         loadData()
-        
    }
 
 }
@@ -84,15 +91,14 @@ extension RecommendViewController {
     private func setUI(){
         //添加collectionView
         view.addSubview(collectionView)
-        
 //       添加cycleView
         collectionView.addSubview(cycleView)
-        
+        //       添加gameView
+        collectionView.addSubview(gameView)
         //设置collectionView的内边距
-        collectionView.contentInset = UIEdgeInsets(top:kCycleViewH, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top:kCycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
     }
 }
-
 
 // Mark:-请求数据
 extension RecommendViewController{
@@ -101,11 +107,15 @@ extension RecommendViewController{
         //请求推荐数据
         recommendVM.requestData {
             self.collectionView.reloadData()
+            
+            //游戏数据
+            self.gameView.group = self.recommendVM.anchorGroups
         }
         //请求无限轮播数据
         recommendVM.requestCycleData {
             self.cycleView.cycleModels = self.recommendVM.cycleModels
          }
+        
     }
 }
 
