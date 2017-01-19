@@ -103,12 +103,10 @@ extension RecommendViewController{
             self.collectionView.reloadData()
         }
         //请求无限轮播数据
-        recommendVM.requestCycleData { 
-            print("数据请求完成")
-        }
-
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
+         }
     }
-    
 }
 
 // Mark:- 遵守collectionDataSource

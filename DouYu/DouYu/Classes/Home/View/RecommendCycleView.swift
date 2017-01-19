@@ -11,7 +11,22 @@ import UIKit
 private let kCycleCellID = "kCycleCellID"
 
 class RecommendCycleView: UIView {
+    
+    
+    //定义属性
+    var cycleModels: [CycleModel]?{
+    
+        didSet{
+            //刷新collectionView
+            collection.reloadData()
+            
+             //设置pageController的个数
+            pageControl.numberOfPages = cycleModels?.count ?? 0
+            
+        }
+    }
 
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collection: UICollectionView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,7 +34,9 @@ class RecommendCycleView: UIView {
         autoresizingMask = .None
         
         //注册cell
-        collection.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier:  kCycleCellID)
+        
+        collection.registerNib(UINib(nibName: "CollectionCycleCell", bundle: nil), forCellWithReuseIdentifier: kCycleCellID)
+        
     }
 
     
@@ -50,19 +67,33 @@ extension RecommendCycleView: UICollectionViewDataSource{
 
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return cycleModels?.count ?? 0
     }
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCycleCellID, forIndexPath: indexPath)
-        cell.backgroundColor = UIColor.redColor()
+        
+        //取出模型
+        let cycleModel = cycleModels![indexPath.item]
+        
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(kCycleCellID, forIndexPath: indexPath) as! CollectionCycleCell
+        
+        cell.cycleModel = cycleModel
         return cell
     }
 }
 
+// Mark:-遵守UICollectionView的delegate
+extension RecommendCycleView: UICollectionViewDelegate{
 
-
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let currentOffX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
+      pageControl.currentPage =  Int(currentOffX / scrollView.bounds.width)
+    }
+    
+    
+}
 
 
 

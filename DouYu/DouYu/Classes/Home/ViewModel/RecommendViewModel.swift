@@ -12,6 +12,7 @@ import UIKit
 class RecommendViewModel{
     
     //懒加载属性
+    lazy var cycleModels: [CycleModel] = [CycleModel]()
     lazy var anchorGroups: [AnchorGroup] = [AnchorGroup]()
     private lazy var bigDataGroup: AnchorGroup = AnchorGroup()
     private lazy var prettyGroup: AnchorGroup = AnchorGroup()
@@ -103,12 +104,17 @@ extension RecommendViewModel{
     // 请求无限轮播数据
     func requestCycleData(finishCallBack:()->()){
         NetWorkTools.requestForData(.GET, urlString: kDouYuHost + kCycleViewHost, parpams: ["version":"2.300"]) { (result) in
-            print(result)
+            //获取整体字典数据
+            guard  let resultDic = result as? [String: NSObject] else {return}
             
+            //根据data的key获取数据
+            guard  let dataAry = resultDic["data"] as? [[String: NSObject]] else {return}
+            //字典转模型对象
+            for dic in dataAry{
+                self.cycleModels.append(CycleModel(dic: dic))
+                
+            }
             finishCallBack() 
         }
-        
-        
-        
     }
 }
