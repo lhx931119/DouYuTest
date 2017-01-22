@@ -28,6 +28,15 @@ class CollectionGameCell: UICollectionViewCell {
             iconImageView.kf_setImageWithURL(icnUrl, placeholderImage: UIImage(named: "home_more"))
         }
     }
+    
+    var model: GameModel?{
+        
+        didSet{
+            titleLabel.text = group?.tag_name
+            let icnUrl = NSURL(string: group?.icon_url ?? "")!
+            iconImageView.kf_setImageWithURL(icnUrl, placeholderImage: UIImage(named: "home_more"))
+        }
+    }
     //系统回调
     override func awakeFromNib() {
         super.awakeFromNib()

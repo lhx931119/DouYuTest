@@ -33,3 +33,7 @@ let kbigDataRoomHost = "getbigDataRoom"
 
 //cycleView
 let kCycleViewHost = "slide/6"
+
+//获取游戏数据 请求参数“shortName:game”
+let kColumdetailHost = "getColumDetail"
+
